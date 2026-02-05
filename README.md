@@ -5,13 +5,13 @@ Embedded project documentation.
 A single cross-platform AWK script that converts Markdown to raw HTML — no dependencies, no build step. Drop the output into your project, Docker image, or repo.
 
 ```
- ┌───────────┐                            ┌────────────┐                      ┌─────┬─────────┐
- │ README.md │                            │ /docs      │                      │ nav │ hello   │
- │ ───────── │                            │ index.html │                      │ ... │─d─o─c─s─│
- │ # Usage   │ ───▶  $ awk hellodocs ───▶ │ 1.html     │ ───▶  browser  ───▶  │ ... │ ·· ···· │
- │ # API     │                            │ 2.html     │                      │ ··· │ ·· · ·· │
- │ # Security│                            │ 3.html     │                      │ ··· │ · · ··· │
- └───────────┘                            └────────────┘                      └─────┴─────────┘
+┌───────────┐                          ┌────────────┐                  ┌─────┬─────────┐
+│ README.md │                          │ /docs      │                  │ nav │ hello   │
+│ ───────── │                          │ index.html │                  │ ... │─d─o─c─s─│
+│ # Usage   │ ──▶  $ awk hellodocs ──▶ │ 1.html     │ ──▶ browser ──▶  │ ... │ ·· ···· │
+│ # API     │                          │ 2.html     │                  │ ··· │ ·· · ·· │
+│ # Security│                          │ 3.html     │                  │ ··· │ · · ··· │
+└───────────┘                          └────────────┘                  └─────┴─────────┘
 ```
 
 **One command to HTML docs**
