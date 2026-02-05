@@ -161,14 +161,13 @@ MIT
 ```
 my-project/
 ├── src/
-├── docs/
+├── hellodocs/
 │   ├── hellodocs.awk
 │   ├── README.md
-│   ├── index.html                  (generated)
-│   │   ├── hellodocs-title.html    (generated)
-│   │   ├── hellodocs-nav.html      (generated)
-│   │   ├── hellodocs-1.html        (generated)
-│   │   └── ...
+│   ├── index.html           (generated)
+│   ├── hellodocs-title.html (generated)
+│   ├── hellodocs-nav.html   (generated)
+│   ├── hellodocs-1.html     (generated)
 │   └── ...
 └── ...
 ```
