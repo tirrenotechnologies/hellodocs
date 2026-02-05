@@ -16,7 +16,7 @@ A single cross-platform AWK script that converts Markdown to raw HTML — no dep
 
 **One command to HTML docs**
 ```bash
-awk -v title='Hello, Docs!' -v source='https://github.com/user/repo' -f hellodocs.awk README.md
+awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
 ```
 
 **Comparison**
@@ -99,7 +99,7 @@ Or [download ZIP](https://github.com/tirrenotechnologies/hellodocs/archive/refs/
 Run this command to generate your HTML docs.
 
 ```bash
-awk -v title='Hello, Docs!' -v source='https://github.com/user/repo' -f hellodocs.awk README.md
+awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
 ```
 
 ### Markdown syntax
@@ -179,7 +179,7 @@ my-project/
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `title` | No | hellodocs | Documentation title in header, footer, and title bar |
-| `source` | No | (none) | URL to source repository, adds "Source code" link in footer |
+| `link` | No | (none) | URL to source repository, adds "Source code" link in footer |
 
 **Advanced: theming (edit hellodocs.awk to change):**
 
@@ -256,7 +256,7 @@ jobs:
       - name: Generate HTML documentation
         run: |
           cd docs
-          awk -v title='Hello, Docs!' -v source='https://github.com/YOUR_ORG/YOUR_REPO' -f hellodocs.awk README.md
+          awk -v title='Hello, Docs!' -v link='https://github.com/YOUR_ORG/YOUR_REPO' -f hellodocs.awk README.md
 
       - name: Cleanup source files
         run: |
@@ -285,7 +285,7 @@ Change these values to match your project:
 | `mkdir -p docs` | `docs` | Output folder name (change to your preferred folder) |
 | `YOUR_ORG/YOUR_REPO` | URL path | Source repository containing README.md |
 | `title='Hello, Docs!'` | Title | Displayed in header, footer, and title bar |
-| `source='https://...'` | URL | Link to source code in footer |
+| `link='https://...'` | URL | Link to source code in footer |
 
 **Step 4: Trigger the workflow**
 
@@ -309,13 +309,13 @@ Allows running `make docs` to regenerate documentation locally.
 
 ```makefile
 docs:
-  cd docs && awk -v title='Hello, Docs!' -v source='https://github.com/user/repo' -f hellodocs.awk README.md
+  cd docs && awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
 ```
 
 **npm (package.json)** allows running `npm run docs` in Node.js projects.
 ```json
 "scripts": {
-  "docs": "cd docs && awk -v title=\"Hello, Docs!\" -v source=\"https://github.com/user/repo\" -f hellodocs.awk README.md"
+  "docs": "cd docs && awk -v title=\"Hello, Docs!\" -v link=\"https://github.com/user/repo\" -f hellodocs.awk README.md"
 }
 ```
 
@@ -324,7 +324,7 @@ docs:
 FROM php:8.2-apache
 COPY . /var/www/html/
 RUN cd /var/www/html/docs && \
-    awk -v title='Hello, Docs!' -v source='https://github.com/user/repo' -f hellodocs.awk README.md
+    awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
 ```
 
 ## Security
