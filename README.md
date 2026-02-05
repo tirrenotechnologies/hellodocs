@@ -16,7 +16,7 @@ A single cross-platform AWK script that converts Markdown to raw HTML — no dep
 
 **One command to HTML docs**
 ```bash
-awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
+awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' README.md
 ```
 
 **Comparison**
@@ -72,17 +72,17 @@ Browsers:
 
 ## Installation
 
-You can embed hellodocs directly into your software by downloading or cloning it, or follow the [Integration](#integration) steps to include it into your workflow.
+You can embed hellodocs directly into your software by downloading or cloning it, or follow the [Integration](#integration) steps to include it in your workflow.
 
 ### Direct download
 
 ```bash
-curl -O https://raw.githubusercontent.com/tirrenotechnologies/hellodocs/main/hellodocs.awk
+curl -O https://raw.githubusercontent.com/tirrenotechnologies/hellodocs/master/hellodocs.awk
 ```
 
 Or using wget:
 ```bash
-wget https://raw.githubusercontent.com/tirrenotechnologies/hellodocs/main/hellodocs.awk
+wget https://raw.githubusercontent.com/tirrenotechnologies/hellodocs/master/hellodocs.awk
 ```
 
 ### From Git
@@ -92,14 +92,14 @@ git clone https://github.com/tirrenotechnologies/hellodocs.git
 cd hellodocs
 ```
 
-Or [download ZIP](https://github.com/tirrenotechnologies/hellodocs/archive/refs/heads/main.zip) and extract.
+Or [download ZIP](https://github.com/tirrenotechnologies/hellodocs/archive/refs/heads/master.zip) and extract.
 
 ## Usage
 
 Run this command to generate your HTML docs.
 
 ```bash
-awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
+awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' README.md
 ```
 
 ### Markdown syntax
@@ -241,7 +241,7 @@ jobs:
 
       - name: Download source documentation
         run: |
-          curl -fsSL --max-time 30 -o docs/README.md https://raw.githubusercontent.com/YOUR_ORG/YOUR_REPO/refs/heads/master/README.md
+          curl -fsSL --max-time 30 -o docs/README.md https://raw.githubusercontent.com/YOUR_ORG/YOUR_REPO/master/README.md
 
       - name: Download hellodocs
         run: |
@@ -256,7 +256,7 @@ jobs:
       - name: Generate HTML documentation
         run: |
           cd docs
-          awk -v title='Hello, Docs!' -v link='https://github.com/YOUR_ORG/YOUR_REPO' -f hellodocs.awk README.md
+          awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/YOUR_ORG/YOUR_REPO' README.md
 
       - name: Cleanup source files
         run: |
@@ -309,13 +309,13 @@ Allows running `make docs` to regenerate documentation locally.
 
 ```makefile
 docs:
-  cd docs && awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
+  cd docs && awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' README.md
 ```
 
 **npm (package.json)** allows running `npm run docs` in Node.js projects.
 ```json
 "scripts": {
-  "docs": "cd docs && awk -v title=\"Hello, Docs!\" -v link=\"https://github.com/user/repo\" -f hellodocs.awk README.md"
+  "docs": "cd docs && awk -f hellodocs.awk -v title=\"Hello, Docs!\" -v link=\"https://github.com/user/repo\" README.md"
 }
 ```
 
@@ -324,7 +324,7 @@ docs:
 FROM php:8.2-apache
 COPY . /var/www/html/
 RUN cd /var/www/html/docs && \
-    awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' -f hellodocs.awk README.md
+    awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/user/repo' README.md
 ```
 
 ## Security
@@ -339,7 +339,7 @@ rm hellodocs.awk README.md
 | Problem | Solution |
 |---------|----------|
 | AWK not found | Run `awk --version` to check if AWK is installed. AWK is pre-installed on most Unix systems. On Windows use WSL, Cygwin, or MSYS2. |
-| Markdown not rendering as expected | Check syntax of your markdown, and if it's passing validation simplify your markup. |
+| Markdown not rendering as expected | Check syntax of your markdown, and if it's passing validation, simplify your markup. |
 | Permission denied | Run `chmod 644 *.html` to set read permissions. Verify with `ls -la *.html`. |
 
 ## Contribution

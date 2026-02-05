@@ -3,7 +3,7 @@
 # Convert documentation inside your project from markdown to raw HTML
 #
 # Usage:
-#   awk -v title='Hello, Docs!' -v link='https://github.com/...' -f hellodocs.awk README.md
+#   awk -f hellodocs.awk -v title='Hello, Docs!' -v link='https://github.com/...' README.md
 #
 # Input:
 #   README.md
