@@ -2,7 +2,7 @@
 
 Embedded project documentation.
 
-A single cross-platform AWK script that converts Markdown to raw HTML — no dependencies, no build step. Drop the output into your project, Docker image, or repo.
+A single, no-dependencies, cross-platform AWK script that converts Markdown to raw HTML documentation. Drop the output into your project, Docker image, or repo.
 
 ```
 ┌───────────┐                          ┌────────────┐                  ┌─────┬─────────┐
